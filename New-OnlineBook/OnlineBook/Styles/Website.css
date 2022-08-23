@@ -1,0 +1,99 @@
+﻿/*1*/
+body 
+{
+    background: #e1e5e8;
+    font:16px/22px Georgia, "Times New Roman", Times, serif; 
+    text-decoration:none;
+    font-size: 16px;
+    line-height: 22px;
+    color:#01699F; 
+}
+
+#page
+{
+ margin:0 auto;
+ width:1000px;
+}
+#head
+{
+ width:1000px;
+ height:100px;
+ background-color:#b0929f;
+
+}
+#menu
+{
+ width:1000px;
+ height:30px;
+ background: linear-gradient(-25deg, #ff7d7d, #fb2c95);
+  float:left;
+
+}
+#left
+{
+ width:300px; 
+ height:auto;
+ background: linear-gradient(-115deg, #57bdbf, #2f9de2);
+ float:left; 
+ text-align:center;
+}
+#right
+{
+ width:700px; 
+ height:auto;
+ background-color:#b0929f;
+ float:right;
+}
+#foot
+{
+ width:1000px; 
+ height:50px;
+ background: linear-gradient(-141deg, #ecca1b, #f39526);
+ clear:both;
+}
+
+/*2*/
+#head_logo
+{
+ float:left;
+ width:250px;
+ height:100px; 
+}
+#head_search
+{
+ float:left;
+ width:450px;
+ height:100px; 
+
+ background: linear-gradient( #c543d8, #925cc3); 
+}
+.head_search_align
+{
+ font-size:larger;
+ margin-top:40px;
+}
+.nav
+{
+   
+ padding:8px 0px 4px 8px; 
+
+}
+
+a:link, a:visited {
+    color:white;
+
+    text-decoration:none;
+}    
+
+a:hover, a:active {
+    color:#000000;
+   
+        text-decoration:underline;
+}
+
+
+/*background: linear-gradient(-125deg, #ff7d7d, #fb2c95);粉色
+background: linear-gradient(-113deg, #c543d8, #925cc3); 紫色
+background: linear-gradient(-141deg, #ecca1b, #f39526); 黄色*/
+
+

@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" 
+Inherits="OnlineBook.Main" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+ <title>网上书店</title>
+ <link href="Styles/WebSite.css" type="text/css" rel="Stylesheet" /> 
+ <script type="text/javascript">
+     window.onload = window.onresize = function () {
+         if (document.getElementById("left").offsetHeight <
+        document.getElementById("right").offsetHeight) {
+             document.getElementById("left").style.height =
+            document.getElementById("right").offsetHeight + "px";
+         }
+         else {
+             document.getElementById("right").style.height =
+            document.getElementById("left").offsetHeight + "px";
+         }
+     }
+ </script> 
+</head>
+<body>
+ <form id="form1" runat="server">
+<div id="page" > 
+ <div id="head">
+     <div id="Div1">
+        <div id="head_logo"> 
+            <img alt="head_logo" src="/Image/head_websiteName.JPG" style="width: 199px" />
+        </div> 
+        <div id="head_search">
+            &nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtSearch" runat="server" Width="281px" CssClass="head_search_align"></asp:TextBox>
+             &nbsp;
+             <asp:Button ID="btnSearch" runat="server" Text="搜索" Width="78px" CssClass="head_search_align" onclick="btnSearch_Click" Height="26px" /> 
+        </div>
+            <img alt="head_word" src="/Image/head_word.JPG" style="width: 168px" /> 
+    </div>
+ </div>
+    
+    
+    
+     
+ <div id="menu">
+    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="nav" ForeColor="White" OnMenuItemClick="Menu1_MenuItemClick"> 
+    <Items>
+    <asp:MenuItem Text="首页" Value="首页" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="我的购物车" Value="我的购物车"  NavigateUrl="~/ShoppingCart.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="我的订单" Value="我的订单"  NavigateUrl="~/MyOrder.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="我的信息" Value="我的信息" NavigateUrl="~/MyInfo.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="后台管理" Value="后台管理" NavigateUrl="~/Admin/ChangePassword.aspx"> </asp:MenuItem>
+    </Items>
+    </asp:Menu> 
+</div>
+
+
+
+
+
+ <div id="left" >
+        <asp:Label ID="lblUser" runat="server" Text="会员登录" BackColor="#FFCC66" ForeColor="#FF6600"></asp:Label>
+<br />
+        <asp:Button ID="Logoutbtn" runat="server" OnClick="Logoutbtn_Click" Text="注销" Visible="False" Width="98px" />
+        <asp:Button ID="SetuserBtn" runat="server" OnClick="SetuserBtn_Click" Text="切换用户" Visible="False" />
+<br />
+        <asp:Label ID="Label1" runat="server" Text="用户名"></asp:Label>
+<br />
+        <asp:TextBox ID="txtUserName" runat="server" Width="130px"></asp:TextBox>
+<br />
+        <asp:Label ID="Label3" runat="server" Text="密码"></asp:Label> 
+<br />
+        <asp:TextBox ID="txtPassword" runat="server" Width="130px"></asp:TextBox>
+<br />
+        <asp:Button ID="btnLogin" runat="server" Text="登录" onclick="btnLogin_Click" Width="142px" />
+<br />
+<br />
+        <asp:Button ID="btnRegister" runat="server" Text="注册"  onclick="btnRegister_Click" Width="142px"/>
+  
+
+
+    
+        <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand">
+        <ItemTemplate>
+        <p>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%#"~/ShowBookByCategory.aspx?CategoryId=" + Eval("CategoryId") %>'><%# Eval("CategoryName")%></asp:HyperLink>
+        </p>
+        </ItemTemplate>
+        </asp:Repeater>
+
+       
+ </div> 
+
+
+
+
+ <div id="right"> 
+    <div id="Div2">
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        <hr />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+    </div> 
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+ </div> 
+
+
+ <div id="foot"> 
+ </div> 
+
+
+
+ </div>
+ </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="首页" description="">
+
+    <siteMapNode url="ShoppingCart.aspx" title="我的购物车" description="" />
+    <siteMapNode url="MyInfo.aspx" title="我的信息" description="" />
+    <siteMapNode url="MyOrder.aspx" title="我的订单" description="">
+
+      <siteMapNode url="ExpressInfo.aspx" title="快递地址" description="" />
+    </siteMapNode>
+
+    <siteMapNode url="BookDetail.aspx" title="图书详细" description="" />
+    <siteMapNode url="~\Admin\ChangePassword.aspx" title="后台管理" description="">
+
+      <siteMapNode url="~\Admin\AddBook.aspx" title="添加图书" description="" />
+      <siteMapNode url="~\Admin\EditBook.aspx" title="编辑图书" description="" />
+      <siteMapNode url="~\Admin\AddCategory.aspx" title="添加分类" description="" />
+      <siteMapNode url="~\Admin\EditCategory.aspx" title="编辑分类" description="" />
+      <siteMapNode url="~\Admin\ManageOrder.aspx" title="订单管理" description="" />
+
+    </siteMapNode>
+
+  </siteMapNode>
+
+</siteMap>

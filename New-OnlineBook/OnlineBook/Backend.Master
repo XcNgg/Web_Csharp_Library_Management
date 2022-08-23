@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Backend.master.cs" Inherits="OnlineBook.Backend" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+ <title>书店后台平台</title>
+ <link href="Styles/WebSite.css" type="text/css" rel="Stylesheet" /> 
+ <script type="text/javascript">
+     window.onload = window.onresize = function () {
+         if (document.getElementById("left").offsetHeight <
+        document.getElementById("right").offsetHeight) {
+             document.getElementById("left").style.height =
+            document.getElementById("right").offsetHeight + "px";
+         }
+         else {
+             document.getElementById("right").style.height =
+            document.getElementById("left").offsetHeight + "px";
+         }
+     }
+ </script> 
+</head>
+<body>
+ <form id="form1" runat="server">
+<div id="page" > 
+ <div id="head">
+     <div id="Div1">
+        <div id="head_logo"> 
+            <img alt="head_logo" src="/Image/head_websiteName.JPG" />
+        </div> 
+        <div id="head_search">
+            <asp:TextBox ID="txtSearch" runat="server" Width="250px" CssClass="head_search_align"></asp:TextBox>
+             <asp:Button ID="btnSearch" runat="server" Text="搜索" Width="60px" CssClass="head_search_align" onclick="btnSearch_Click" /> 
+        </div>
+            <img alt="head_word" src="/Image/head_word.JPG" /> 
+    </div>
+ </div>
+    
+    
+    
+     
+ <div id="menu">
+    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="nav" ForeColor="White"> 
+    <Items>
+    <asp:MenuItem Text="首页" Value="首页" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="我的购物车" Value="我的购物车"  NavigateUrl="~/ShoppingCart.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="我的订单" Value="我的订单"  NavigateUrl="~/MyOrder.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="我的信息" Value="我的信息" NavigateUrl="~/MyInfo.aspx"></asp:MenuItem>
+    <asp:MenuItem Text="后台管理" Value="后台管理" NavigateUrl="~/Admin/ChangePassword.aspx"> </asp:MenuItem>
+    </Items>
+    </asp:Menu> 
+</div>
+
+
+
+
+
+ <div id="left" >
+    
+  
+
+
+    
+      <asp:TreeView ID="TreeView1" runat="server">
+<Nodes>
+
+    <asp:TreeNode Text="修改密码" NavigateUrl="~/Admin/ChangePassword.aspx"></asp:TreeNode>
+    <asp:TreeNode Text="图书类别管理" Value="图书类别管理"> 
+        <asp:TreeNode Text="添加类别" Value="添加类别" NavigateUrl="~/Admin/AddCategory.aspx"></asp:TreeNode>
+        <asp:TreeNode Text="编辑类别" Value="修改类别" NavigateUrl="~/Admin/EditCategory.aspx"></asp:TreeNode>
+        <asp:TreeNode Text="删除类别" Value="删除类别" NavigateUrl="~/Admin/DelCategory.aspx"></asp:TreeNode>
+    </asp:TreeNode>
+
+    <asp:TreeNode Text="图书管理" Value="图书管理"> 
+        <asp:TreeNode Text="添加图书" Value="添加图书" NavigateUrl="~/Admin/AddBook.aspx"></asp:TreeNode>
+        <asp:TreeNode Text="修改图书" Value="修改图书" NavigateUrl="~/Admin/EditBook.aspx"></asp:TreeNode>
+    </asp:TreeNode>
+    <asp:TreeNode Text="订单管理" Value="订单管理" NavigateUrl="~/Admin/ManageOrder.aspx"></asp:TreeNode>
+
+</Nodes>
+
+</asp:TreeView>
+
+       
+ </div> 
+
+
+
+
+ <div id="right"> 
+    <div id="Div2">
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+        <hr />
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+    </div> 
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> </asp:ContentPlaceHolder>
+ </div> 
+
+
+ <div id="foot"> 
+ </div> 
+
+
+
+ </div>
+ </form>
+</body>
+</html>
